@@ -3,14 +3,14 @@ import json
 import os
 import pandas as pd
 import numpy as np
-from backend.config import settings
-from backend.agents.cleaning import CleaningAgent
-from backend.agents.analysis import AnalysisAgent
-from backend.agents.visualization import VisualizationAgent
-from backend.agents.sql_agent import SQLAgent
-from backend.agents.forecast import ForecastAgent
-from backend.agents.insight import InsightAgent
-from backend.agents.rag_agent import RAGAgent
+from config import settings
+from agents.cleaning import CleaningAgent
+from agents.analysis import AnalysisAgent
+from agents.visualization import VisualizationAgent
+from agents.sql_agent import SQLAgent
+from agents.forecast import ForecastAgent
+from agents.insight import InsightAgent
+from agents.rag_agent import RAGAgent
 
 class PlannerAgent:
     def __init__(self):
@@ -309,7 +309,7 @@ class PlannerAgent:
                 if date_cols and num_cols:
                     forecast_res = self.forecast_agent.forecast_values(df, date_cols[0], num_cols[0])
 
-                from backend.agents.report import ReportAgent
+                from agents.report import ReportAgent
                 rep_generator = ReportAgent()
                 rep_generator.generate_pdf_report(pdf_path, "Executive Business Report", summary, cols, clean_hist, insights, forecast_res)
                 

@@ -4,9 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 import os
 
-from backend.config import settings
-from backend.database import init_db, get_db, Project, Dataset, Dashboard, Report, User
-from backend.routes import data, chat, ml
+from config import settings
+from database import init_db, get_db, Project, Dataset, Dashboard, Report, User
+from routes import data, chat, ml
 
 
 print("Gemini:", settings.GEMINI_API_KEY[:10])

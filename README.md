@@ -31,7 +31,7 @@ Backend:
 Backend
 
 ```bash
-uvicorn backend.main:app --reload
+uvicorn main:app --reload
 ```
 
 Frontend

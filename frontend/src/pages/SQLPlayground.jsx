@@ -46,7 +46,7 @@ export default function SQLPlayground({ currentProject, activeDataset, apiKey, p
         }
       }
     } catch (err) {
-      alert("Error sending SQL query request to backend.")
+      alert("Error sending SQL query request to ")
     } finally {
       setIsLoading(false)
     }
@@ -104,14 +104,14 @@ export default function SQLPlayground({ currentProject, activeDataset, apiKey, p
           <div className="space-y-2 pt-2">
             <span className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold block">Quick Prompt Suggestions</span>
             <div className="space-y-1.5">
-              <button 
-                onClick={() => setNlQuery("SELECT * FROM dataset LIMIT 10")} 
+              <button
+                onClick={() => setNlQuery("SELECT * FROM dataset LIMIT 10")}
                 className="w-full text-left bg-slate-950/20 border border-slate-900 hover:border-slate-800 rounded px-2.5 py-1.5 font-mono text-[10px] text-indigo-400 truncate"
               >
                 SELECT * FROM dataset LIMIT 10
               </button>
-              <button 
-                onClick={() => setNlQuery("Show columns count and sum of numeric columns")} 
+              <button
+                onClick={() => setNlQuery("Show columns count and sum of numeric columns")}
                 className="w-full text-left bg-slate-950/20 border border-slate-900 hover:border-slate-800 rounded px-2.5 py-1.5 font-mono text-[10px] text-indigo-400 truncate"
               >
                 Show columns count & sums

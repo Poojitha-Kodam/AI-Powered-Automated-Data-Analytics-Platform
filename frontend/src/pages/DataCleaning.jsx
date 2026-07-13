@@ -18,7 +18,7 @@ export default function DataCleaning({ currentProject, activeDataset, setActiveD
       } else {
         fetchRecommendations()
       }
-      
+
       // If dataset has clean history, load it
       if (activeDataset.summary?.clean_history) {
         setCleanHistory(activeDataset.summary.clean_history)
@@ -110,7 +110,7 @@ export default function DataCleaning({ currentProject, activeDataset, setActiveD
         setCleanHistory(data.history)
         setRecommendations(data.remaining_recommendations)
         initializeSelection(data.remaining_recommendations)
-        
+
         // Update active dataset columns/rows
         setActiveDataset(prev => ({
           ...prev,
@@ -124,7 +124,7 @@ export default function DataCleaning({ currentProject, activeDataset, setActiveD
         alert(err.detail || "Failed to execute cleaning pipeline.")
       }
     } catch (e) {
-      alert("Error sending cleaning payload to backend.")
+      alert("Error sending cleaning payload to ")
     } finally {
       setIsLoading(false)
     }
@@ -179,13 +179,12 @@ export default function DataCleaning({ currentProject, activeDataset, setActiveD
                 {recommendations.map((rec) => {
                   const isChecked = selectedRecommendations[rec.id]
                   return (
-                    <div 
+                    <div
                       key={rec.id}
-                      className={`p-4 rounded-xl border transition-all ${
-                        isChecked 
-                          ? 'bg-indigo-950/20 border-indigo-900/60' 
+                      className={`p-4 rounded-xl border transition-all ${isChecked
+                          ? 'bg-indigo-950/20 border-indigo-900/60'
                           : 'bg-slate-900/10 border-slate-850 opacity-60'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-start gap-4">
                         <input
@@ -201,7 +200,7 @@ export default function DataCleaning({ currentProject, activeDataset, setActiveD
                             </span>
                             <span className="text-xs text-slate-500">• {rec.issue}</span>
                           </div>
-                          
+
                           <div className="text-sm text-slate-200 font-medium">
                             {rec.recommendation}
                           </div>

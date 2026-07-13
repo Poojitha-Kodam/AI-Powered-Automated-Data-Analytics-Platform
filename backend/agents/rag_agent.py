@@ -1,7 +1,7 @@
 import json
 from sqlalchemy.orm import Session
-from backend.database import VectorStore
-from backend.config import settings
+from database import VectorStore
+from config import settings
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np

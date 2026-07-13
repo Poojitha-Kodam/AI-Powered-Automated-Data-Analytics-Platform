@@ -7,7 +7,7 @@ from reportlab.lib import colors
 import docx
 from pptx import Presentation
 from pptx.util import Inches, Pt
-from backend.config import settings
+from config import settings
 
 class ReportAgent:
     def __init__(self):

@@ -3,7 +3,7 @@ import pandas as pd
 import time
 import re
 import json
-from backend.config import settings
+from config import settings
 
 class SQLAgent:
     def __init__(self):

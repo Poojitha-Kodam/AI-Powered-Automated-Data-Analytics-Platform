@@ -6,10 +6,10 @@ import pandas as pd
 from fastapi import APIRouter, Depends, UploadFile, File, Form, HTTPException, Request
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
-from backend.database import get_db, Dataset, Project, ChatMessage
-from backend.config import settings
-from backend.agents.cleaning import CleaningAgent
-from backend.agents.analysis import AnalysisAgent
+from database import get_db, Dataset, Project, ChatMessage
+from config import settings
+from agents.cleaning import CleaningAgent
+from agents.analysis import AnalysisAgent
 
 router = APIRouter(prefix="/data", tags=["data"])
 

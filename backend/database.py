@@ -3,7 +3,7 @@ import json
 from sqlalchemy import create_engine, Column, Integer, String, DateTime, Text, ForeignKey, LargeBinary
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
-from backend.config import settings
+from config import settings
 
 # Create SQLAlchemy engine
 engine = create_engine(settings.DATABASE_URL, connect_args={"check_same_thread": False})

@@ -2,10 +2,10 @@ import os
 import json
 from fastapi import APIRouter, Depends, Form, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
-from backend.database import get_db, ChatMessage, Project, Dataset
-from backend.agents.planner import PlannerAgent
-from backend.agents.rag_agent import RAGAgent
-from backend.config import settings
+from database import get_db, ChatMessage, Project, Dataset
+from agents.planner import PlannerAgent
+from agents.rag_agent import RAGAgent
+from config import settings
 import pandas as pd
 
 router = APIRouter(prefix="/chat", tags=["chat"])
@@ -41,7 +41,7 @@ def send_message(
         if os.path.exists(filepath):
             try:
                 # Import load function helper from data router
-                from backend.routes.data import load_file_to_df
+                from routes.data import load_file_to_df
                 df = load_file_to_df(filepath, dataset.name)
             except Exception:
                 pass

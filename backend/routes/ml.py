@@ -2,9 +2,9 @@ import os
 import json
 from fastapi import APIRouter, Depends, Form, HTTPException
 from sqlalchemy.orm import Session
-from backend.database import get_db, Dataset
-from backend.agents.forecast import ForecastAgent
-from backend.config import settings
+from database import get_db, Dataset
+from agents.forecast import ForecastAgent
+from config import settings
 
 router = APIRouter(prefix="/ml", tags=["ml"])
 ml_agent = ForecastAgent()
@@ -26,7 +26,7 @@ def train_model(
     if not os.path.exists(filepath):
         raise HTTPException(status_code=404, detail="Raw dataset file not found on disk.")
 
-    from backend.routes.data import load_file_to_df
+    from routes.data import load_file_to_df
     df = load_file_to_df(filepath, dataset.name)
 
     try:
@@ -79,7 +79,7 @@ def forecast_trends(
     if not os.path.exists(filepath):
         raise HTTPException(status_code=404, detail="Dataset file not found.")
 
-    from backend.routes.data import load_file_to_df
+    from routes.data import load_file_to_df
     df = load_file_to_df(filepath, dataset.name)
 
     if date_col not in df.columns or value_col not in df.columns:
