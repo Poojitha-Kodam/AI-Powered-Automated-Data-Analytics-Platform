@@ -38,7 +38,7 @@ export default function DataCleaning({ currentProject, activeDataset, setActiveD
     if (!activeDataset) return
     setIsLoading(true)
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/data/${activeDataset.id}/preview`)
+      const res = await fetch(`https://ai-powered-automated-data-analytics.onrender.com/api/v1/data/${activeDataset.id}/preview`)
       if (res.ok) {
         // Simple scan on active dataset to fetch info
         const data = await res.json()
@@ -100,7 +100,7 @@ export default function DataCleaning({ currentProject, activeDataset, setActiveD
       const formData = new FormData()
       formData.append('accepted_actions', JSON.stringify(actionsToRun))
 
-      const res = await fetch(`http://localhost:8000/api/v1/data/${activeDataset.id}/clean`, {
+      const res = await fetch(`https://ai-powered-automated-data-analytics.onrender.com/api/v1/data/${activeDataset.id}/clean`, {
         method: 'POST',
         body: formData
       })

@@ -48,7 +48,7 @@ export default function MLPlayground({ currentProject, activeDataset }) {
         formData.append('target_col', targetCol)
       }
 
-      const res = await fetch('http://localhost:8000/api/v1/ml/train-model', {
+      const res = await fetch('https://ai-powered-automated-data-analytics.onrender.com/api/v1/ml/train-model', {
         method: 'POST',
         body: formData
       })

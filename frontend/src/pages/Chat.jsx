@@ -31,7 +31,7 @@ export default function Chat({ currentProject, activeDataset, apiKey, provider }
 
   const fetchHistory = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/chat/history/${currentProject.id}`)
+      const res = await fetch(`https://ai-powered-automated-data-analytics.onrender.com/api/v1/chat/history/${currentProject.id}`)
       if (res.ok) {
         const data = await res.json()
         setMessages(data)
@@ -72,7 +72,7 @@ export default function Chat({ currentProject, activeDataset, apiKey, provider }
         formData.append('api_key', apiKey)
       }
 
-      const res = await fetch('http://localhost:8000/api/v1/chat/send', {
+      const res = await fetch('https://ai-powered-automated-data-analytics.onrender.com/api/v1/chat/send', {
         method: 'POST',
         body: formData
       })
@@ -410,7 +410,7 @@ export default function Chat({ currentProject, activeDataset, apiKey, provider }
                     <p className="text-[11px] text-slate-500 mt-1">Contains data statistics summaries, cleaning logs, visual charts, and forecasting charts.</p>
                   </div>
                   <a 
-                    href={`http://localhost:8000${activeInspector.data}`} 
+                    href={`https://ai-powered-automated-data-analytics.onrender.com${activeInspector.data}`} 
                     target="_blank"
                     rel="noreferrer"
                     className="block w-full bg-indigo-650 hover:bg-indigo-600 text-xs font-semibold py-2.5 rounded-xl transition-colors"

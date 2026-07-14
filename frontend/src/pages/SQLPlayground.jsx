@@ -26,7 +26,7 @@ export default function SQLPlayground({ currentProject, activeDataset, apiKey, p
         formData.append('api_key', apiKey)
       }
 
-      const res = await fetch('http://localhost:8000/api/v1/chat/send', {
+      const res = await fetch('https://ai-powered-automated-data-analytics.onrender.com/api/v1/chat/send', {
         method: 'POST',
         body: formData
       })

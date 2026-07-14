@@ -34,7 +34,7 @@ export default function App() {
   // Fetch projects on load
   const loadProjects = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/projects')
+      const res = await fetch('https://ai-powered-automated-data-analytics.onrender.com/api/v1/projects')
       if (res.ok) {
         const data = await res.json()
         setProjectsList(data)

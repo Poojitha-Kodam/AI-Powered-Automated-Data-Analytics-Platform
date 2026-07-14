@@ -37,7 +37,7 @@ export default function Visualizations({ currentProject, activeDataset }) {
       formData.append('project_id', currentProject.id)
       formData.append('message', q)
       // Send directly to chat API so the planner agent invokes visualization
-      const res = await fetch('http://localhost:8000/api/v1/chat/send', {
+      const res = await fetch('https://ai-powered-automated-data-analytics.onrender.com/api/v1/chat/send', {
         method: 'POST',
         body: formData
       })

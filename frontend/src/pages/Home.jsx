@@ -33,7 +33,7 @@ export default function Home({
       const formData = new FormData()
       formData.append('name', newProjectName)
       
-      const res = await fetch('http://localhost:8000/api/v1/projects', {
+      const res = await fetch('https://ai-powered-automated-data-analytics.onrender.com/api/v1/projects', {
         method: 'POST',
         body: formData
       })
@@ -60,7 +60,7 @@ export default function Home({
     formData.append('project_id', currentProject.id)
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/data/upload', {
+      const res = await fetch('https://ai-powered-automated-data-analytics.onrender.com/api/v1/data/upload', {
         method: 'POST',
         body: formData
       })
@@ -110,7 +110,7 @@ export default function Home({
     }
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/data/connect-db', {
+      const res = await fetch('https://ai-powered-automated-data-analytics.onrender.com/api/v1/data/connect-db', {
         method: 'POST',
         body: formData
       })
@@ -120,7 +120,7 @@ export default function Home({
         loadProjects()
         // Trigger profile refresh
         if (data.dataset_id) {
-          const detailRes = await fetch(`http://localhost:8000/api/v1/data/${data.dataset_id}/preview`)
+          const detailRes = await fetch(`https://ai-powered-automated-data-analytics.onrender.com/api/v1/data/${data.dataset_id}/preview`)
           if (detailRes.ok) {
             const previewData = await detailRes.json()
             setActiveDataset({
